@@ -1,0 +1,13 @@
+name: release-plan
+
+on:
+  workflow_dispatch:
+
+jobs:
+  outline:
+    runs-on: macos-latest
+    steps:
+      - name: Placeholder
+        run: |
+          echo "Scaffold workflow."
+          echo "Planned: build NetworkMonitorKit.xcframework, package RN lib, publish npm."
