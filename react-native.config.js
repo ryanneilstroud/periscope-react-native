@@ -1,8 +1,10 @@
 module.exports = {
   dependency: {
     platforms: {
-      ios: {},
-      android: {}
+      ios: {
+        podspecPath: 'ios/NetworkMonitorReactNative.podspec'
+      },
+      android: null
     }
   }
 };

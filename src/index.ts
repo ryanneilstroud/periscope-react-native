@@ -23,3 +23,8 @@ export async function startNetworkMonitor(options?: StartOptions): Promise<void>
 export async function stopNetworkMonitor(): Promise<void> {
   return getNativeModule().stop();
 }
+
+export const NetworkMonitor = {
+  start: startNetworkMonitor,
+  stop: stopNetworkMonitor,
+};

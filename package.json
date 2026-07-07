@@ -2,9 +2,9 @@
   "name": "@ryanneilstroud/network-monitor-react-native",
   "version": "0.1.0",
   "description": "React Native bridge package for NetworkMonitorKit",
-  "main": "lib/commonjs/index.js",
-  "module": "lib/module/index.js",
-  "types": "lib/typescript/index.d.ts",
+  "main": "src/index.ts",
+  "module": "src/index.ts",
+  "types": "src/index.ts",
   "react-native": "src/index.ts",
   "source": "src/index.ts",
   "files": [
@@ -16,9 +16,9 @@
     "*.podspec"
   ],
   "scripts": {
-    "build": "echo \"Scaffold only: add bob build pipeline when Node tooling is available.\"",
-    "typecheck": "echo \"Scaffold only: add tsc when Node tooling is available.\"",
-    "test": "echo \"Scaffold only: add tests when implementation lands.\""
+    "build": "echo \"No build step required yet.\"",
+    "typecheck": "echo \"Typecheck not configured.\"",
+    "test": "echo \"Tests not configured.\""
   },
   "keywords": [
     "react-native",

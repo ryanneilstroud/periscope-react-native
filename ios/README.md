@@ -1,15 +1,11 @@
 # iOS packaging notes
 
-This package is designed so consumers do **not** need to add an SPM dependency in their app project.
+This package embeds `NetworkMonitorKit` Swift source directly in the pod target.
 
-## Recommended release flow
+Consumers do not need to add an SPM dependency in their app project.
 
-1. Build `NetworkMonitorKit.xcframework` in your Swift package pipeline.
-2. Attach the artifact to a release (or copy into `ios/Frameworks` during packaging).
-3. Ensure podspec points to the vendored framework path.
-4. Publish npm package.
+## Current linking flow
 
-Consumers should only run standard React Native install steps:
-
-1. `npm install @ryanneilstroud/network-monitor-react-native`
-2. `npx pod-install`
+1. RN autolinking resolves `ios/NetworkMonitorReactNative.podspec`
+2. Pod compiles bridge + embedded `NetworkMonitorKit` Swift sources
+3. App uses the JS API without additional Xcode package setup

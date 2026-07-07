@@ -1,28 +1,43 @@
 # @ryanneilstroud/network-monitor-react-native
 
-React Native bridge for `NetworkMonitorKit` with a low-friction install path.
+React Native iOS bridge for `NetworkMonitorKit` with low-friction installation.
 
-## Goal
+## Status
 
-Keep app integration as close as possible to standard React Native library setup:
+Implemented for iOS via React Native native module + CocoaPods autolinking.
+
+## Install
 
 1. `npm install @ryanneilstroud/network-monitor-react-native`
-2. `npx pod-install` (iOS only, standard RN step)
+2. `npx pod-install`
+3. Rebuild the iOS app
 
-No app-level SPM setup should be required by consumers.
+No app-side SPM setup is required.
 
-## Recommended packaging strategy
+## Usage
 
-Use CocoaPods autolinking + a vendored prebuilt `NetworkMonitorKit.xcframework` inside this package (or fetched by podspec from a release artifact). This avoids requiring end users to add SPM dependencies manually in their app project.
+```ts
+import { NetworkMonitor } from '@ryanneilstroud/network-monitor-react-native';
 
-## Current repository state
+await NetworkMonitor.start({
+  host: '192.168.1.100', // your Mac running NetworkMonitorViewer
+  port: 61337,
+});
+```
 
-This is a scaffold + implementation plan repository. It includes:
+Stop monitoring:
 
-- RN package metadata and TS API surface skeleton
-- iOS podspec stub for binary framework integration
-- docs for architecture, compatibility, and release flow
+```ts
+await NetworkMonitor.stop();
+```
 
-## Next implementation steps
+You can also call named exports:
 
-See `docs/PLAN.md`.
+```ts
+import { startNetworkMonitor, stopNetworkMonitor } from '@ryanneilstroud/network-monitor-react-native';
+```
+
+## Platform support
+
+- iOS: supported
+- Android: not implemented yet
