@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "NetworkMonitorReactNative"
-  s.version      = "0.1.0"
+  s.version      = "0.2.0"
   s.summary      = "React Native bridge for NetworkMonitorKit"
   s.description  = "Low-friction React Native iOS bridge that depends on NetworkMonitorKit."
   s.homepage     = "https://github.com/ryanneilstroud/network-monitor-react-native"
