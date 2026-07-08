@@ -12,7 +12,6 @@
     "lib",
     "ios",
     "android",
-    "react-native.config.js",
     "*.podspec"
   ],
   "scripts": {

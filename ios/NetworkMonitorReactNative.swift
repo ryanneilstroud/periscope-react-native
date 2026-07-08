@@ -1,4 +1,5 @@
 import Foundation
+import NetworkMonitorKit
 import React
 
 @objc(NetworkMonitorReactNative)
