@@ -13,6 +13,9 @@ import okhttp3.Request
 class NetworkMonitorReactNativeModule(
   reactContext: ReactApplicationContext
 ) : ReactContextBaseJavaModule(reactContext) {
+  init {
+    Periscope.initialize(reactContext.applicationContext)
+  }
 
   override fun getName(): String = "PeriscopeBridge"
 

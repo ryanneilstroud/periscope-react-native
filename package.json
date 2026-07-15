@@ -1,6 +1,6 @@
 {
   "name": "@ryanneilstroud/periscope-react-native",
-  "version": "0.2.0",
+  "version": "0.5.5",
   "description": "React Native bridge package for PeriscopeKit and PeriscopeAndroid",
   "main": "src/index.ts",
   "module": "src/index.ts",

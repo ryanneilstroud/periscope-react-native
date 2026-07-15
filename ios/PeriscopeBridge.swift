@@ -15,9 +15,9 @@ final class PeriscopeBridge: NSObject {
         resolve: @escaping RCTPromiseResolveBlock,
         reject: @escaping RCTPromiseRejectBlock
     ) {
-        let receiver = options?["receiver"] as? NSDictionary
-        let host = (receiver?["host"] as? String)?.trimmingCharacters(in: .whitespacesAndNewlines)
-        let requestedPort = receiver?["port"] as? NSNumber
+        let receiverOptions = (options?["receiver"] as? NSDictionary) ?? options
+        let host = (receiverOptions?["host"] as? String)?.trimmingCharacters(in: .whitespacesAndNewlines)
+        let requestedPort = receiverOptions?["port"] as? NSNumber
         let portValue = requestedPort?.intValue ?? 61337
 
         guard (1...65535).contains(portValue) else {
@@ -34,6 +34,15 @@ final class PeriscopeBridge: NSObject {
 
         Periscope.capture(for: receiver)
         resolve(nil)
+    }
+
+    @objc(start:resolve:reject:)
+    func start(
+        _ options: NSDictionary?,
+        resolve: @escaping RCTPromiseResolveBlock,
+        reject: @escaping RCTPromiseRejectBlock
+    ) {
+        capture(options, resolve: resolve, reject: reject)
     }
 
     @objc(stop:reject:)
