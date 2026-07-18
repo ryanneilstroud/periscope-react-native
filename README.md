@@ -25,7 +25,7 @@ import {Periscope} from '@ryanneilstroud/periscope-react-native';
 
 await Periscope.capture({
   receiver: {
-    host: '192.168.1.100', // your Mac running Periscope Viewer
+    host: 'localhost', // simulator only; use your Mac LAN IP on physical devices
     port: 61337,
   },
 });
